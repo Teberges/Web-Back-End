@@ -20,7 +20,7 @@ public class Curso {
     @joinColumn(name = "CategoriaCurso_id")
     private CategoriaCurso categoriaCurso;
 
-public Curso(long id, String nome, Integer cargaHoraria) {
+public Curso(long id, String nome, Integer cargaHoraria) { 
     this.id = id;
     this.nome = nome;
     this.cargaHoraria = cargaHoraria;
