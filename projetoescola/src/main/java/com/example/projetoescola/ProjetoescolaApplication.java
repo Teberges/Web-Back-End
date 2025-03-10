@@ -40,5 +40,7 @@ public class ProjetoescolaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProjetoescolaApplication.class, args);
 	}
+	
+
 
 
