@@ -15,6 +15,10 @@ public class Curso {
     private String nome;
     @Column(nullable = false)
     private Integer cargaHoraria;
+    
+    @ManyToOne
+    @joinColumn(name = "CategoriaCurso_id")
+    private CategoriaCurso categoriaCurso;
 
 public Curso(long id, String nome, Integer cargaHoraria) {
     this.id = id;
