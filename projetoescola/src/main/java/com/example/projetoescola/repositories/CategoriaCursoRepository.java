@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.example.projetoescola.models.CategoriaCursos;
+import com.example.projetoescola.models.CategoriaCurso;
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
@@ -18,21 +18,21 @@ import jakarta.transaction.Transactional;
     
 
         @Transactional
-        public CategoriaCursos inserir(CategoriaCursos categoriaCurso) {
+        public CategoriaCurso inserir(CategoriaCurso categoriaCurso) {
             return entityManager.merge(categoriaCurso);
         }
-        
-        public CategoriaCursos salvar(CategoriaCursos categoriaCursos){
+        @Transactional
+        public CategoriaCurso salvar(CategoriaCurso categoriaCursos){
             return entityManager.merge(categoriaCursos);
 
         }
         
-        public List<CategoriaCursos> obterTodos(){
-            return entityManager.createQuery("from CategoriaCursos", CategoriaCursos.class).getResultList();
+        public List<CategoriaCurso> obterTodos(){
+            return entityManager.createQuery("from CategoriaCurso", CategoriaCurso.class).getResultList();
         }
     
-        public List<CategoriaCursos> obterPorNome(String nome){
-            return entityManager.createQuery("from CategoriaCurso where nome = :nome", CategoriaCursos.class)
+        public List<CategoriaCurso> obterPorNome(String nome){
+            return entityManager.createQuery("from CategoriaCurso where nome = :nome", CategoriaCurso.class)
                 .setParameter("nome", nome)
                 .getResultList();
         }

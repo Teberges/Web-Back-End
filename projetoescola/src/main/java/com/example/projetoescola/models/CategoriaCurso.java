@@ -9,13 +9,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class CategoriaCursos {
+public class CategoriaCurso {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "CategoriaCurso")
+    @OneToMany(mappedBy = "categoriaCurso")
     private List<Curso> cursos;
 
-    public CategoriaCursos( Long id, String name){
+    public CategoriaCurso() {
+    }
+
+    public CategoriaCurso( Long id, String name){
         this.id= id; 
         this.name= name;
        

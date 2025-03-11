@@ -8,16 +8,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.example.projetoescola.models.CategoriaCurso;
 import com.example.projetoescola.models.Curso;
+import com.example.projetoescola.repositories.CategoriaCursoRepository;
 import com.example.projetoescola.repositories.CursoRepository;
 
 @SpringBootApplication
 public class ProjetoescolaApplication {
 
+	@SuppressWarnings("unused")
 	@Bean
 	public CommandLineRunner init(
 			@Autowired CursoRepository cursoRepository,
-            @Autowired CategoriaCursoRepository categoriaRepository)
+            @Autowired CategoriaCursoRepository categoriaRepository){
 		return args -> {
 			cursoRepository.salvar(
 					new Curso(null, "teste", 2000));
@@ -36,11 +39,13 @@ public class ProjetoescolaApplication {
 
 		};
 	}
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProjetoescolaApplication.class, args);
 	}
 	
+}
 
 
 
