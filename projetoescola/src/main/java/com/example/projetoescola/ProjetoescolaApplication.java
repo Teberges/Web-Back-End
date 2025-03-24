@@ -22,20 +22,20 @@ public class ProjetoescolaApplication {
 			@Autowired CursoRepository cursoRepository,
             @Autowired CategoriaCursoRepository categoriaRepository){
 		return args -> {
-			cursoRepository.salvar(
+			cursoRepository.save(
 					new Curso(null, "teste", 2000));
 			cursoRepository.salvar(
 					new Curso(null, "teste2", 2050));
-			List<Curso> listaCursos = cursoRepository.obterTodos();
+			List<Curso> listaCursos = cursoRepository.findAll();
 			System.out.println("*** Cursos cadastrados:");
 			listaCursos.forEach(System.out::println);
 			System.out.println("*** Inserir Categoria:");
-			CategoriaCurso categ = categoriaRepository.salvar(
+			CategoriaCurso categ = categoriaRepository.save(
 				new CategoriaCurso(null, "Informática"));
 		System.out.println("*** Vincular Categoria ao curso ***");
-		Curso curso = cursoRepository.obterTodos().get(0);
+		Curso curso = cursoRepository.findAll().get(0);
 		curso.setCategoriaCurso(categ);
-		cursoRepository.salvar(curso);
+		cursoRepository.save(curso);
 
 		};
 	}
