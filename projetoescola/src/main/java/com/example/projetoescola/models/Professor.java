@@ -13,11 +13,11 @@ private Long id;
 
 
 private String nome;
-private Double preco;
-public Professor(Long id, String nome, Double preco) {
+private Double salario;
+public Professor(Long id, String nome, Double salario) {
 this.id = id;
 this.nome = nome;
-this.preco = preco;
+this.salario = salario;
 }
 public Professor() {
 }
@@ -33,14 +33,14 @@ return nome;
 public void setNome(String nome) {
 this.nome = nome;
 }
-public Double getPreco() {
-return preco;
+public Double getsalario() {
+return salario;
 }
-public void setPreco(Double preco) {
-this.preco = preco;
+public void setsalario(Double salario) {
+this.salario = salario;
 }
 @Override
 public String toString() {
-return "Professor [id=" + id + ", nome=" + nome + ", preco=" + preco + "]";
+return "Professor [id=" + id + ", nome=" + nome + ", salario=" + salario + "]";
 }
 }
